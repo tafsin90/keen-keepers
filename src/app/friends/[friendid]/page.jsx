@@ -1,12 +1,13 @@
+
 import Image from "next/image";
 import { statusColors } from "@/utils/status";
 
 import { RiNotificationSnoozeLine } from "react-icons/ri";
 import { FaArchive } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { FiPhoneCall } from "react-icons/fi";
-import { IoMdText } from "react-icons/io";
-import { BsCameraVideo } from "react-icons/bs";
+
+import CheckIn from "@/ui/CheckIn";
+
 
 
 const FriendDetailsPage = async ({ params }) => {
@@ -17,7 +18,6 @@ const FriendDetailsPage = async ({ params }) => {
 
   const friend = friends.find((f) => f.id === parseInt(friendid));
 
-  if (!friend) return <div className="p-8 text-red-500">Friend not found.</div>;
 
   return (
     <div className="min-h-screen bg-slate-50 p-8">
@@ -45,17 +45,17 @@ const FriendDetailsPage = async ({ params }) => {
 
           {/* Actions */}
           <div className="flex flex-col gap-1">
-            <button className="rounded-2xl shadow-sm flex items-center justify-center gap-1 px-5 py-4 text-sm font-medium text-slate-700 bg-white">
+            <button className="rounded-2xl shadow-sm flex items-center justify-center gap-1 px-5 py-4 text-sm font-medium text-slate-700 bg-white hover:cursor-pointer" >
               <RiNotificationSnoozeLine className="text-lg" />
               <p>Snooze 1 week</p>
             </button>
 
-            <button className="rounded-2xl shadow-sm w-full flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium text-slate-700 bg-white">
+            <button className="rounded-2xl shadow-sm w-full flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium text-slate-700 bg-white hover:cursor-pointer"   >
               <FaArchive />
               <p>Archive</p>
             </button>
 
-            <button className="rounded-2xl shadow-sm w-full flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium text-red-500 bg-white">
+            <button className="rounded-2xl shadow-sm w-full flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium text-red-500 bg-white hover:cursor-pointer">
               <RiDeleteBinLine className="text-lg" />
               <p>Delete</p>
             </button>
@@ -100,25 +100,7 @@ const FriendDetailsPage = async ({ params }) => {
           </div>
 
           {/* Quick Check-In */}
-          <div className="bg-white rounded-2xl shadow-sm p-6">
-            <h2 className="text-lg font-bold text-emerald-700 mb-4">Quick Check-In</h2>
-            <div className="grid grid-cols-3 gap-4">
-              <button className="flex flex-col items-center gap-2 py-5 rounded-xl border border-slate-100 hover:bg-slate-50 transition text-slate-700 font-medium">
-                <FiPhoneCall className="text-xl" />
-                <p>Call</p>
-              </button>
-
-              <button className="flex flex-col items-center gap-2 py-5 rounded-xl border border-slate-100 hover:bg-slate-50 transition text-slate-700 font-medium">
-                <IoMdText className="text-xl" />
-                <p>Text</p>
-              </button>
-
-              <button className="flex flex-col items-center gap-2 py-5 rounded-xl border border-slate-100 hover:bg-slate-50 transition text-slate-700 font-medium">
-                <BsCameraVideo className="text-xl"/>
-                <p>Video Call</p>
-              </button>
-            </div>
-          </div>
+          <CheckIn></CheckIn>
         </div>
       </div>
     </div>
