@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   return (
-    <div className="navbar bg-base-100 shadow-sm ">
+    <div className="navbar bg-base-100 shadow-sm py-5 p-30">
       <div className="flex-1">
         <a className=" text-2xl font-bold">
           Keen<span className="text-emerald-900">Keeper</span>
