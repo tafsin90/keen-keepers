@@ -1,12 +1,13 @@
+import Friends from "./friends/page";
 
-import Friends from '@/components/Friends';
+
 
 const page = async () => {
-  const res = await fetch(new URL("/friends.json", "http://localhost:3000"));
+  const res = await fetch("http://localhost:3000/friends.json");
   const friends = await res.json();
   
   return (
-    <div className="bg-red-200  ">
+    <div className="bg-base-200">
       <div className="flex flex-col flex-1 items-center  bg-base-200 font-sans w-7xl mx-auto py-20 space-y-10">
         <main className="text-center space-y-8">
           <h1 className="text-5xl font-bold">Friends to keep close in your life</h1>
