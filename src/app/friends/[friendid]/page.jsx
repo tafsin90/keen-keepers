@@ -45,12 +45,12 @@ const FriendDetailsPage = async ({ params }) => {
 
           {/* Actions */}
           <div className="flex flex-col gap-1">
-            <button className="rounded-2xl shadow-sm flex items-center justify-center gap-1 px-5 py-4 text-sm font-medium text-slate-700 bg-white hover:cursor-pointer" >
+            <button className="rounded-2xl shadow-sm flex items-center justify-center gap-1 px-5 py-4 text-sm font-medium text-slate-700 bg-white hover:cursor-pointer">
               <RiNotificationSnoozeLine className="text-lg" />
               <p>Snooze 1 week</p>
             </button>
 
-            <button className="rounded-2xl shadow-sm w-full flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium text-slate-700 bg-white hover:cursor-pointer"   >
+            <button className="rounded-2xl shadow-sm w-full flex items-center justify-center gap-2 px-5 py-4 text-sm font-medium text-slate-700 bg-white hover:cursor-pointer">
               <FaArchive />
               <p>Archive</p>
             </button>
@@ -100,7 +100,7 @@ const FriendDetailsPage = async ({ params }) => {
           </div>
 
           {/* Quick Check-In */}
-          <CheckIn></CheckIn>
+          <CheckIn friendName={friend.name} friendId={friend.id} />
         </div>
       </div>
     </div>
