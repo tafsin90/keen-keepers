@@ -15,7 +15,7 @@ const Navbar = () => {
         </a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 space-x-2">
           <li>
             <Link className={`${pathname === "/" ? "nav-btn " : ""}`} href="/">
               <RxHome />
