@@ -1,5 +1,7 @@
 export const getTimeline = () => {
-
+if (typeof window === "undefined") {
+  return [];
+}
   const data = localStorage.getItem("timeline");
   return data ? JSON.parse(data) : [];
 };
