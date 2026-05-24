@@ -31,10 +31,10 @@ export default function MyPieChart() {
   ]
   
   return (
-    <div className="w-7xl mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-4">Friendship Analysis</h2>
+    <div className="w-7xl mx-auto mt-20">
+      <h2 className="text-5xl font-bold mb-4">Friendship Analysis</h2>
       <div className="bg-base-200 shadow-sm rounded-lg p-6">
-        <h2>By Intersection Type</h2>
+        <h2 className="text-xl font-semibold text-slate-600">By Intersection Type</h2>
         <ResponsiveContainer width="100%" height={400}>
           <PieChart>
             <Pie

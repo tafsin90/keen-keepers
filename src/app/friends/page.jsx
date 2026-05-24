@@ -19,7 +19,7 @@ const Friends = ({ friends }) => {
               <div className="flex flex-col items-center gap-2">
                 <div className="flex items-center gap-1">
                   {friend.tags.map((tag, index) => (
-                    <div key={index} className="badge bg-emerald-200 text-emerald-900 font-semibold p-3">
+                    <div key={index} className="badge bg-emerald-100 text-emerald-900 font-semibold p-3">
                       {tag}
                     </div>
                   ))}
