@@ -8,14 +8,12 @@ import { RiDeleteBinLine } from "react-icons/ri";
 
 import CheckIn from "@/ui/CheckIn";
 
-
+import friends from "../../../../public/friends.json";
 
 const FriendDetailsPage = async ({ params }) => {
   const { friendid } = await params;
 
-  const res = await fetch("http://localhost:3000/friends.json");
-  const friends = await res.json();
-
+  
   const friend = friends.find((f) => f.id === parseInt(friendid));
 
 

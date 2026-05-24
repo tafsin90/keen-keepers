@@ -1,10 +1,9 @@
 import Friends from "./friends/page";
-
+import friends from "../../public/friends.json";
 
 
 const page = async () => {
-  const res = await fetch("http://localhost:3000/friends.json");
-  const friends = await res.json();
+
 
   const count = friends.reduce((acc, friend) => {
     if (friend.status === "active") {
