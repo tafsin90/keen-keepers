@@ -5,6 +5,17 @@ import Friends from "./friends/page";
 const page = async () => {
   const res = await fetch("http://localhost:3000/friends.json");
   const friends = await res.json();
+
+  const count = friends.reduce((acc, friend) => {
+    if (friend.status === "active") {
+      acc.active += 1;
+    } else if (friend.status === "inactive") {
+      acc.inactive += 1;
+    } else if (friend.status === "overdue") {
+      acc.overdue += 1;
+    }
+    return acc;
+  }, { active: 0, inactive: 0, overdue:0});
   
   return (
     <div className="bg-base-200">
@@ -17,20 +28,20 @@ const page = async () => {
 
         <main className="flex gap-6">
           <div className="py-8 px-15 space-y-2 bg-white text-center rounded-lg shadow-sm">
-            <h1 className="text-3xl font-semibold text-emerald-900">10</h1>
+            <h1 className="text-3xl font-semibold text-emerald-900">{friends.length}</h1>
             <p className="text-lg text-slate-500">Total friends</p>
           </div>
           <div className="py-8 px-15 space-y-2 bg-white text-center rounded-lg shadow-sm">
-            <h1 className="text-3xl font-semibold text-emerald-900">10</h1>
-            <p className="text-lg text-slate-500">Total friends</p>
+            <h1 className="text-3xl font-semibold text-emerald-900">{count.active}</h1>
+            <p className="text-lg text-slate-500">Active</p>
           </div>
           <div className="py-8 px-15 space-y-2 bg-white text-center rounded-lg shadow-sm">
-            <h1 className="text-3xl font-semibold text-emerald-900">10</h1>
-            <p className="text-lg text-slate-500">Total friends</p>
+            <h1 className="text-3xl font-semibold text-emerald-900">{count.inactive}</h1>
+            <p className="text-lg text-slate-500">Inactive</p>
           </div>
           <div className="py-8 px-15 space-y-2 bg-white text-center rounded-lg shadow-sm">
-            <h1 className="text-3xl font-semibold text-emerald-900">10</h1>
-            <p className="text-lg text-slate-500">Total friends</p>
+            <h1 className="text-3xl font-semibold text-emerald-900">{count.overdue}</h1>
+            <p className="text-lg text-slate-500">Overdue</p>
           </div>
         </main>
 

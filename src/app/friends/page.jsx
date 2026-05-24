@@ -4,6 +4,9 @@ import Link from "next/link";
 import React from "react";
 
 const Friends = ({ friends }) => {
+
+  
+
   return (
     <div>
       <h1 className="text-2xl font-bold my-6">Friends List</h1>
