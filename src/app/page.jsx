@@ -37,7 +37,7 @@ const page = async () => {
           </div>
           <div className="py-8 px-15 space-y-2 bg-white text-center rounded-lg shadow-sm">
             <h1 className="text-3xl font-semibold text-emerald-900">{count.inactive}</h1>
-            <p className="text-lg text-slate-500">Inactive</p>
+            <p className="text-lg text-slate-500">inactive</p>
           </div>
           <div className="py-8 px-15 space-y-2 bg-white text-center rounded-lg shadow-sm">
             <h1 className="text-3xl font-semibold text-emerald-900">{count.overdue}</h1>
