@@ -11,7 +11,7 @@ const Friends = ({ friends }) => {
     <div>
       <h1 className="text-2xl font-bold my-6">Friends List</h1>
       <div className="grid grid-cols-4 gap-4 ">
-        {friends.map((friend) => (
+        {friends?.map((friend) => (
           <Link href={`/friends/${friend.id}`} key={friend.id}>
             <div className="py-8 px-15 space-y-2 bg-white text-center rounded-lg shadow-sm">
               <Image src={friend.picture} alt={friend.name} width={64} height={64} className="w-20 rounded-full mx-auto object-cover" />
