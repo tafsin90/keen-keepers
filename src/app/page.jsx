@@ -10,7 +10,7 @@ const page = async () => {
     if (friend.status === "active") {
       acc.active += 1;
     } else if (friend.status === "inactive") {
-      acc.inactive += 1;
+      acc.inactive += 1  ;
     } else if (friend.status === "overdue") {
       acc.overdue += 1;
     }
